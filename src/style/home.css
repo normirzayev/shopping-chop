@@ -1,0 +1,114 @@
+.home-header{
+  background-color: #ED165F;
+  padding: 100px 150px;
+  text-align: center;
+}
+.bg-logo{
+  background-image: url(../img/home/bgsafari.png);
+  background-repeat: no-repeat;
+}
+.bg-logo img{
+  margin-top: -100px;
+}
+
+.sarlavha{
+  position: relative;
+  padding: 50px 0;
+}
+.chiziq{
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.sarlavha h1{
+  position: absolute;
+  top: 0px;
+  background-color: white;
+  padding: 10px 50px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 24px;
+}
+
+.shop-elements>p{
+  width: 80%;
+  margin:0 auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 35px;
+}
+.cards{
+  display: grid;
+  padding: 50px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.card{
+  text-align: center;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  padding: 2px;
+}
+.card:hover{
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.card:hover .karzinka{
+  opacity: 1;
+  z-index: 1;
+  height: 82%;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.7s;
+}
+
+.card img{
+  width: 100%;
+  object-fit: cover;
+}
+.card .karzinka{
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 0%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  border-radius: 5px 5px  0 0 ;
+}
+.card .karzinka button{
+  display: block;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: white;
+  margin: 5px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+.card .karzinka button:first-child{
+  width: 15%;
+}
+.card .karzinka button:hover{
+  cursor: pointer;
+  background-color: silver;
+  color: #ED165F;
+}
+.card .card-about{
+  margin-top: 5px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
