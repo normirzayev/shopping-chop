@@ -13,6 +13,8 @@ import chishka from "../img/shoes/chishka.png";
 import krasovka from "../img/shoes/krasovka.png";
 import basanochka from "../img/shoes/basanochka.png";
 import etik from "../img/shoes/etik.png";
+import Pagination from "../layout/Pagination";
+import { paginate } from "../layout/paginate";
 export default function Shoes () {
   const [data] = useState([
     {
@@ -82,12 +84,99 @@ export default function Shoes () {
       narx:10000
     },
     {
-      id:1,
+      id:13,
       rasm: etik,
       nom:"Multicolored armless top",
       narx:10000
     },
+    {
+      id:14,
+      rasm: etik,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:15,
+      rasm: basanochka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:16,
+      rasm: krasovka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:17,
+      rasm: chishka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+
+    {
+      id:18,
+      rasm: chishka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:19,
+      rasm: poshna,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:20,
+      rasm: chishka2,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:21,
+      rasm: oldi_ochiq,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:22,
+      rasm: poshna_tufli,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:23,
+      rasm: tufli,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:24,
+      rasm: chishka3,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:25,
+      rasm: chishka4,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    
   ])
+  const count = data.length;
+  const [view] = useState({
+    pageSize: 12
+  })
+
+  const [current, setCurrent] = useState(1);
+
+  const onPageChange = (page) => {
+    setCurrent(page)
+  }
+  
+  const paginated = paginate(data, current, view.pageSize);
+  
   return(
     <div className="clothes">
       <h1>Shoes</h1>
@@ -236,7 +325,7 @@ export default function Shoes () {
           </div>
           <div className="clothes-cards">
             {
-              data.map(item => (
+              paginated.map(item => (
                 <div className="card" key={item.id}>
                   <div className="rasm">
                     <img src={item.rasm} alt="rasm" />
@@ -252,7 +341,15 @@ export default function Shoes () {
                 </div>
               ))
             }
-          </div>
+            </div>
+            <div className="pagenation">
+              <Pagination
+                countItems={count} 
+                currentPage={current} 
+                pageSize={view.pageSize} 
+                onPageChange={onPageChange}                
+              />
+            </div>
         </div>
       </div>
     </div>

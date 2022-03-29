@@ -13,6 +13,8 @@ import soat from "../img/accessoures/soat.png";
 import shapka from "../img/accessoures/shapka.png";
 import sumka_qora from "../img/accessoures/sumka-qora.png";
 import kavboy from "../img/accessoures/kavboy.png";
+import { paginate } from "../layout/paginate";
+import Pagination from "../layout/Pagination";
 export default function Accessories () {
   const [data] = useState([
     {
@@ -87,7 +89,93 @@ export default function Accessories () {
       nom:"Multicolored armless top",
       narx:10000
     },
+    {
+      id:13,
+      rasm: kavboy,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:14,
+      rasm: sumka_qora,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:15,
+      rasm: shapka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:16,
+      rasm: soat,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:17,
+      rasm: shlyapa,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:18,
+      rasm: soat2,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:19,
+      rasm: kepka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:20,
+      rasm: uzuk,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:21,
+      rasm: achki,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:22,
+      rasm: sumka_pushti,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:23,
+      rasm: tumor,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:24,
+      rasm: sumka_girl,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
   ])
+
+  const count = data.length;
+  const [view] = useState({
+    pageSize: 12
+  })
+
+  const [current, setCurrent] = useState(1);
+
+  const onPageChange = (page) => {
+    setCurrent(page)
+  }
+
+  const paginated = paginate(data, current, view.pageSize);
+
   return(
     <div className="clothes">
       <h1>Accessories</h1>
@@ -236,7 +324,7 @@ export default function Accessories () {
           </div>
           <div className="clothes-cards">
             {
-              data.map(item => (
+              paginated.map(item => (
                 <div className="card" key={item.id}>
                   <div className="rasm">
                     <img src={item.rasm} alt="rasm" />
@@ -253,6 +341,14 @@ export default function Accessories () {
               ))
             }
           </div>
+          <div className="pagenation">
+              <Pagination 
+                countItems={count} 
+                currentPage={current} 
+                pageSize={view.pageSize} 
+                onPageChange={onPageChange}                
+              />
+            </div>
         </div>
       </div>
     </div>

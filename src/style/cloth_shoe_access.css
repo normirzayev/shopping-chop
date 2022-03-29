@@ -198,3 +198,25 @@
   color: white;
   cursor: pointer;
 }
+
+.pagenation{
+  width: 100%;
+  margin-top: 30px;
+}
+.link{
+  display: inline-block;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 1px solid silver;
+}
+.link a{
+  display: inline-block;
+  padding: 5px 25px;
+}
+.active{
+  border-bottom: 2px solid #ED165F;
+}
+.pagenation ul{
+  display: flex;
+  justify-content: center;
+}
