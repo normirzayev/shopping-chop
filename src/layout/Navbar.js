@@ -14,10 +14,10 @@ export default function Navbar () {
       <Router>
         <nav>
           <div className="navlink">
-            <NavLink to="/" ActiveClassName="active" >home</NavLink>
-            <NavLink to="/clothes" >clothes</NavLink>
-            <NavLink to="/shoes" >shoes</NavLink>
-            <NavLink to="/accessories" >accessories</NavLink>
+            <NavLink to="/" activeclassname="active" >home</NavLink>
+            <NavLink to="/clothes" activeclassname="active" >clothes</NavLink>
+            <NavLink to="/shoes" activeclassname="active" >shoes</NavLink>
+            <NavLink to="/accessories" activeclassname="active" >accessories</NavLink>
           </div>
           <div>
             <Link to="/"> <img src={logo} alt="logo" /> </Link>

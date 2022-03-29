@@ -1,6 +1,15 @@
 import model from "../img/home/girl.png";
 import "../style/home.css";
-import soat from "../img/home/soat.png"
+import soat from "../img/home/soat.png";
+import soatgirl from "../img/home/soatgirl.png";
+import tumor from "../img/home/tumor.png";
+import sumka from "../img/home/sumka.png";
+import atir from "../img/home/atir.png";
+import etik from "../img/home/etik.png";
+import achki from "../img/home/achki.png";
+import tufli from "../img/home/tufli.png";
+import chishka from "../img/home/chishka.png";
+import shapka from "../img/home/shapka.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
@@ -8,84 +17,100 @@ import { useState } from "react";
 
 export default function Home () {
   
-  const [data, setData] = useState([
+  const [data] = useState([
     {
+      id:1,
       rasm: soat,
       nom:"Multicolored armless top",
       narx:10000
     },
     {
+      id:2,
+      rasm: soatgirl,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:3,
       rasm: soat,
       nom:"Multicolored armless top",
       narx:10000
     },
     {
+      id:4,
       rasm: soat,
       nom:"Multicolored armless top",
       narx:10000
     },
     {
+      id:5,
       rasm: soat,
       nom:"Multicolored armless top",
       narx:10000
     },
     {
+      id:6,
+      rasm: tumor,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:7,
+      rasm: sumka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:8,
+      rasm: atir,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:9,
+      rasm: etik,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:10,
+      rasm: achki,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:11,
+      rasm: tufli,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:12,
       rasm: soat,
       nom:"Multicolored armless top",
       narx:10000
     },
     {
+      id:13,
+      rasm: tufli,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:14,
+      rasm: chishka,
+      nom:"Multicolored armless top",
+      narx:10000
+    },
+    {
+      id:15,
       rasm: soat,
       nom:"Multicolored armless top",
       narx:10000
     },
     {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
-      nom:"Multicolored armless top",
-      narx:10000
-    },
-    {
-      rasm: soat,
+      id:16,
+      rasm: shapka,
       nom:"Multicolored armless top",
       narx:10000
     },
@@ -108,7 +133,7 @@ export default function Home () {
       <div className="cards">
         {
           data.map(item => (
-            <div className="card">
+            <div className="card" key={item.id}>
               <div className="rasm">
                 <img src={item.rasm} alt="rasm" />
                 <div className="karzinka">
